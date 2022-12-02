@@ -8,10 +8,10 @@
 
 import re
 
-string = input("Enter your text: ")
-cnt = len(re.findall(r"\d+", string))
-if cnt:
-    print("Amount of numbers in text: ", cnt)
+text = input("Enter your text: ")
+count = len(re.findall(r"\d+", text))
+if count:
+    print("Amount of numbers in text: ", count)
 else:
     print("No numbers found in text")
 
