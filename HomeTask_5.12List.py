@@ -8,11 +8,11 @@
 
 import re
 
-string = input("Введите строку ")
+string = input("Enter your text: ")
 cnt = len(re.findall(r"\d+", string))
 if cnt:
-    print(cnt)
+    print("Amount of numbers in text: ", cnt)
 else:
-    print('Числа не обнаружены')
+    print("No numbers found in text")
 
 print("End")
