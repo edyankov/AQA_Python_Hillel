@@ -23,6 +23,6 @@ t.sort()
 t = t[-5:]
 t.reverse()
 for number, word in t:
-    print(f"{word} - {number} раз")
+    print(f"{word} - {number} times")
 
 print("End")
