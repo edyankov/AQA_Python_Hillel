@@ -23,7 +23,7 @@
 """
 
 
-pytest .\path\  -m "from_class and pack"
+pytest .\path\  -m "from_class or pack"
 
 pytest .\path\  -m "not from_class"
 
