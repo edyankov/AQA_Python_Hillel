@@ -1,15 +1,11 @@
 import pytest
-from selenium.webdriver import Chrome
+from selenium import webdriver
 
 
 @pytest.fixture(scope="session")
-def driver():
-    with Chrome() as driver:
-        yield driver
-
-
-@pytest.fixture()
-def checkbox_page(driver):
+def driver_browser():
+    driver = webdriver.Chrome()
     driver.get("https://demoqa.com/checkbox")
-    yield
+    yield driver
     driver.quit()
+
