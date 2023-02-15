@@ -8,3 +8,4 @@ def driver_browser():
     driver.get("https://demoqa.com/checkbox")
     yield driver
     driver.quit()
+
