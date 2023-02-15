@@ -21,9 +21,9 @@ def test_present_button(driver_browser):
     assert visible_button.is_displayed()
 
 
-def wait_for_element_to_become_visible(driver_browser, elem_id: str) -> None:
-    WebDriverWait(driver_browser, 6).until(ec.visibility_of_element_located((By.ID, elem_id)))
+def wait_for_element_to_become_visible(driver_browser, element_id: str) -> None:
+    WebDriverWait(driver_browser, 6).until(ec.visibility_of_element_located((By.ID, element_id)))
 
 
-def wait_for_element_to_become_clickable(driver_browser, elem_id: str) -> None:
-    WebDriverWait(driver_browser, 6).until(ec.element_to_be_clickable((By.ID, elem_id)))
+def wait_for_element_to_become_clickable(driver_browser, element_id: str) -> None:
+    WebDriverWait(driver_browser, 6).until(ec.element_to_be_clickable((By.ID, element_id)))
