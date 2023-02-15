@@ -5,17 +5,18 @@ def expand_folder_tree(driver, folder_tree):
     for folder in folder_tree:
         expand_button = driver.find_element(
             By.XPATH, f'//span[@class="rct-text"][.="{folder}"]/button[@aria-label="Toggle"]')
+        _ = expand_button.location_once_scrolled_into_view
         expand_button.click()
 
 
 def select_checkboxes(driver, checkboxes):
     for checkbox in checkboxes:
         checkbox_element = driver.find_element(
-            By.XPATH, f'//span[@class="rct-title"][.="{checkbox}"]')
-        var = checkbox_element.location_once_scrolled_into_view
-        checkbox_input = var.find_element(By.CSS_SELECTOR, "input[id]")
+            By.XPATH, f'//span[@class="rct-title"][.="{checkbox}"]//ancestor::label')
+        _ = checkbox_element.location_once_scrolled_into_view
+        checkbox_input = checkbox_element.find_element(By.CSS_SELECTOR, "input[id]")
         if not checkbox_input.is_selected():
-            var.click()
+            checkbox_element.click()
 
 
 def test_checkboxes(driver_browser):
