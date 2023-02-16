@@ -1,16 +1,12 @@
 import pytest
-from selenium import webdriver
 from selenium.webdriver.common.by import By
 
 
 @pytest.fixture(scope="session")
-def driver_browser():
-    driver = webdriver.Chrome()
-    try:
-        driver.get("https://demoqa.com/dynamic-properties")
-        yield driver
-    finally:
-        driver.quit()
+def dynamic_properties_page(request):
+    driver = request.getfixturevalue("driver_browser")
+    driver.get("https://demoqa.com/dynamic-properties")
+    yield driver
 
 
 @pytest.fixture(scope='function')

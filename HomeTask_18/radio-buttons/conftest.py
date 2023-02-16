@@ -1,12 +1,8 @@
 import pytest
-from selenium import webdriver
 
 
 @pytest.fixture(scope="session")
-def driver_browser():
-    driver = webdriver.Chrome()
-    try:
-        driver.get("https://demoqa.com/radio-button")
-        yield driver
-    finally:
-        driver.quit()
+def radio_button_page(request):
+    driver = request.getfixturevalue("driver_browser")
+    driver.get("https://demoqa.com/radio-button")
+    yield driver
