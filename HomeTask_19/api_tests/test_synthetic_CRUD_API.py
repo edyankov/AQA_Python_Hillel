@@ -1,8 +1,9 @@
+"""API tests: Створити по одному синтетичному API тесту, для кожної функції CRUD (Create, read, update, delete). """
+
 import pytest
-import json
 import requests
 
-TEST_URL = "http://localhost:5000"
+TEST_URL = "http://localhost:3000"
 
 
 @pytest.fixture
